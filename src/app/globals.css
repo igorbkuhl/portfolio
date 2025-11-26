@@ -3,34 +3,35 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        @apply text-wine dark:text-bubblegum;
-    }
+  html {
+    @apply text-wine dark:text-bubblegum;
+  }
 
-    html * {
-        @apply transition-all;
-        @apply scroll-mt-24;
-    }
+  html * {
+    @apply transition-all;
+    @apply scroll-mt-24;
+  }
 
-    h1 {
-        @apply text-4xl;
-    }
-    
-    h2 {
-        @apply text-2xl;
-    }
+  h1 {
+    @apply text-4xl;
+  }
 
-    h3 {
-        @apply text-3xl font-medium snap-center;
-    }
+  h2 {
+    @apply text-2xl;
+  }
 
-    h4 {
-        @apply text-2xl;
-    }
+  h3 {
+    @apply text-3xl font-medium snap-center;
+  }
 
-    a, button {
-        @apply hover:text-rose-950 dark:hover:text-rose-200;
-    }
+  h4 {
+    @apply text-2xl;
+  }
+
+  a,
+  button {
+    @apply hover:text-rose-950 dark:hover:text-rose-200;
+  }
 }
 
 @layer utilities {
@@ -39,23 +40,30 @@
   }
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    background-image: linear-gradient(0deg, #d2b9f9 0%, #ecb9f9 70%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100%;
-    overflow-x: hidden
+  background-image: linear-gradient(0deg, #d2b9f9 0%, #ecb9f9 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
 }
+
 html.dark {
-    background-image: linear-gradient(0deg, hsl(264, 84%, 15%) 0%, #3a0647 70%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100%;
-    overflow-x: hidden
+  background-image: linear-gradient(0deg, hsl(264, 84%, 15%) 0%, #3a0647 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  overflow-x: hidden
 }

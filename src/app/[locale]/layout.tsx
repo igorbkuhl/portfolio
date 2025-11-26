@@ -1,13 +1,10 @@
 import "../globals.css";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "next-themes";
 import { getMessages } from "@lib/request";
 import { locales } from "@src/middleware";
 import ClientProvider from "./ClientProvider";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Portfólio",
@@ -34,7 +31,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={montserrat.className}>
+      <body>
         <ThemeProvider
           attribute="class"
           enableSystem={true}
