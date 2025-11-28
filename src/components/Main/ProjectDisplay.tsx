@@ -7,11 +7,16 @@ import Image from "next/image";
 
 interface Project {
   title: string;
-  description: string | unknown;
+  description: string;
   repository_url: string;
   deployed_url: string;
   languages: string;
   image_title: string;
+};
+
+interface TranslatedProject {
+  title: string;
+  description: string;
 };
 
 export default function ProjectDisplay() {
@@ -24,7 +29,8 @@ export default function ProjectDisplay() {
   const deployed = t("links.deployed");
   const here = t("links.here");
   const repository = t("links.repository");
-  const descriptions = Object.values(t.raw("descriptions"));
+  const translatedProjects: TranslatedProject[] =
+    t.raw("items") ?? [{ title: "", description: ""}];
 
   const portfolioImage = useScreenshot();
 
@@ -37,7 +43,8 @@ export default function ProjectDisplay() {
         const parsedProjects = projectResults.map((result, index) => {
           return {
             ...result,
-            description: descriptions[index]
+            title: translatedProjects?.[index]?.title,
+            description: translatedProjects?.[index]?.description
           }
         });
 
@@ -98,7 +105,7 @@ export default function ProjectDisplay() {
               />
               <div className="p-3 flex flex-col">
                 <div>
-                  <p className="mb-4">{project.description as string}</p>
+                  <p className="mb-4">{project.description}</p>
                   {project.deployed_url && (
                     <p>
                       {deployed}
