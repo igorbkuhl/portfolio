@@ -40,13 +40,11 @@ export default function ProjectDisplay() {
         const projectResults: Project[] = await fetch("/api/projects")
           .then(res => res.json());
 
-        const parsedProjects = projectResults.map((result, index) => {
-          return {
+        const parsedProjects = projectResults.map((result, index) => ({
             ...result,
             title: translatedProjects?.[index]?.title,
             description: translatedProjects?.[index]?.description
-          }
-        });
+        }));
 
         setProjects(parsedProjects);
       };

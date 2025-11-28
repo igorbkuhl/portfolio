@@ -16,13 +16,11 @@ export default function Qualifications() {
   const t = useTranslations("home.main.qualifications");
 
   const certificateKeys = Object.keys(t.raw("certificates"));
-  const certificates = certificateKeys.map((cert) => {
-    return {
+  const certificates = certificateKeys.map((cert) => ({
       name: t(`certificates.${cert}.title`),
       path: getImage(`certificates/${cert}.jpg`),
       date: t(`certificates.${cert}.date`)
-    };
-  });
+  }));
 
   const openModal = (certificate: Certificate) => {
     setCurrentCertificate(certificate);

@@ -27,14 +27,12 @@ export default function TopContent() {
       const contactResults: Contact[] = await fetch("/api/contacts")
         .then(res => res.json());
 
-      const contactInfo = contactResults.map((result) => {
-        return {
+      const contactInfo = contactResults.map((result) => ({
           title: result.title,
           icon_path: result.icon_path,
           url: result.url,
           label: result.label
-        };
-      });
+      }));
       setContacts(contactInfo);
     })();
   }, []);
