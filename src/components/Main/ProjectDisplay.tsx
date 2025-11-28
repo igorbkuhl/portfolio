@@ -51,9 +51,14 @@ export default function ProjectDisplay() {
   return (
     <section
       id="projects"
-      className="w-full mx-auto lg:w-[50em]"
+      className={`
+        flex flex-col lg:justify-evenly items-baseline
+        mx-auto lg:w-full lg:px-8 mb-12 lg:mb-8
+      `}
     >
-      <h3 className="pb-3">{sectionTitle}</h3>
+      <h3 className="w-full text-center lg:text-left mb-4 w-fit">
+        {sectionTitle}
+      </h3>
       {projects.map((project, index) => {
         const projectImage = project.deployed_url === "#"
           ? portfolioImage : getImage(`/projects/${project.image_title}`);
