@@ -8,6 +8,7 @@ interface Contact {
   url: string;
   label: string;
   icon_path: string;
+  dark_invert: boolean;
 };
 
 export default function TopContent() {
@@ -31,7 +32,8 @@ export default function TopContent() {
           title: result.title,
           icon_path: result.icon_path,
           url: result.url,
-          label: result.label
+          label: result.label,
+          dark_invert: result.dark_invert,
       }));
       setContacts(contactInfo);
     })();
@@ -66,7 +68,7 @@ export default function TopContent() {
                 height="25"
                 width="25"
                 priority
-                className={index === 0 ? "invert-0 dark:invert" : ""}
+                className={contact.dark_invert ? "invert-0 dark:invert" : ""}
               />
               <a
                 href={contact.url}
