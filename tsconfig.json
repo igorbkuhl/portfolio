@@ -46,7 +46,8 @@
       "@i18n/*": [
         "./i18n/*"
       ]
-    }
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
@@ -54,7 +55,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/**/*",
-    "app/**/*"
+    "app/**/*",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
