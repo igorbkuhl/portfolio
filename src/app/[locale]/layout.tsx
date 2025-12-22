@@ -11,11 +11,13 @@ export const metadata: Metadata = {
   description: "Página portfólio de Igor Borges Kühl"
 };
 
+interface Params {
+  locale: string;
+}
+
 interface LayoutProps {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
+  params: Promise<Params>;
 };
 
 export default async function RootLayout({
