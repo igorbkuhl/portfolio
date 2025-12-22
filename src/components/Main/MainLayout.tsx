@@ -9,7 +9,7 @@ export default function MainLayout() {
     <div
       className={`
         lg:rounded-2xl bg-pink-light dark:bg-purple-dark
-        w-screen lg:w-[70rem] p-8
+        w-screen lg:w-280 p-8
       `}
     >
       <div className="w-[80%] mx-auto">

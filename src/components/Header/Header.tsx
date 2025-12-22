@@ -18,7 +18,7 @@ export default function Header() {
         dark:bg-licorice drop-shadow-lg flex items-center text-xl
       `}
     >
-      <nav className="w-[70rem] px-4 mx-auto flex justify-between items-center">
+      <nav className="w-280 px-4 mx-auto flex justify-between items-center">
         <div className="flex items-baseline">
           <TranslationMenu />
           <DarkModeButton />
