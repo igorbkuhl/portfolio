@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "next-themes";
 import { getMessages } from "@lib/request";
-import { locales } from "@src/middleware";
+import { locales } from "@src/proxy";
 import ClientProvider from "./ClientProvider";
 
 export const metadata: Metadata = {

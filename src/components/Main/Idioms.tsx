@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { locales } from "@src/middleware";
+import { locales } from "@src/proxy";
 
 export default function IdiomsDisplay() {
   const t = useTranslations("home.main.idioms");
