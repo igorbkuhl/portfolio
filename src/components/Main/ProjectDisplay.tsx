@@ -4,6 +4,7 @@ import { useScreenshot } from "@hooks/useScreenshot";
 import { useLanguage } from "@hooks/useLanguage";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Icon from "@utils/Icon";
 
 interface Project {
   title: string;
@@ -130,15 +131,14 @@ export default function ProjectDisplay() {
                     const altTitle = tAlts("main", { title: iconTitle });
 
                     return (
-                      <Image
-                        key={langIndex}
-                        src={getImage(`icons/languages/${lang}.svg`)}
-                        alt={altTitle}
-                        title={altTitle}
-                        height="30"
-                        width="30"
-                        className="ml-2"
-                      />
+                      <div key={langIndex}>
+                        <Icon
+                          src={getImage(`icons/languages/${lang}.svg`)}
+                          text={altTitle}
+                          size={30}
+                          className="ml-2"
+                        />
+                      </div>
                     );
                   })}
                 </div>

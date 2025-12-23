@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { getImage } from "@lib/request";
 import { Info } from "lucide-react";
-import LanguageItem from "@main/Languages/LanguageItem";
+import Icon from "@utils/Icon";
 import Tooltip from "@src/components/Utils/Tooltip";
 
 interface LanguageTable {
@@ -85,7 +85,15 @@ export default function LanguageBlock() {
                     key={iconIndex}
                     className="flex flex-col mx-2 lg:m-2"
                   >
-                    <LanguageItem icon={icon} text={info.titles[iconIndex]} />
+                    <div className="relative">
+                      <Icon
+                        src={icon}
+                        size={80}
+                        text={info.titles[iconIndex]}
+                        tooltip={info.titles[iconIndex]}
+                        className="hover:scale-110"
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
