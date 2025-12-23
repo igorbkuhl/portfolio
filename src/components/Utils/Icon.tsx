@@ -26,7 +26,10 @@ export default function Icon({
       title={tooltip ? "" : text}
       height={size}
       width={size}
-      className={className}
+      className={`
+        drop-shadow-sm drop-shadow-slate-300 dark:drop-shadow-indigo-600
+        ${className}
+      `}
       unoptimized
     />;
   const content = tooltip
