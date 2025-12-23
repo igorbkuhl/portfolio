@@ -7,6 +7,10 @@ export default function DarkModeButton() {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
+  const toggleTheme = () => {
+    theme == "dark" ? setTheme("light") : setTheme("dark");
+  }
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -17,7 +21,7 @@ export default function DarkModeButton() {
 
   return (
     <button
-      onClick={() => theme == "dark" ? setTheme("light") : setTheme("dark")}
+      onClick={toggleTheme}
       className={`
         rounded-full text-wine/50 dark:text-bubblegum/50
         hover:text-amber-500 dark:hover:text-slate-300 p-2 transition
