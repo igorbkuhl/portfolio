@@ -74,6 +74,10 @@
   src: url("../../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 
+::selection {
+  @apply text-wine bg-rose-300;
+}
+
 * {
   /* padding: 0; */
   /* margin: 0; */
@@ -83,8 +87,7 @@
 html {
   background-image: linear-gradient(0deg, #d2b9f9 0%, #ecb9f9 70%);
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100%;
+  background-attachment: scroll;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
@@ -92,7 +95,6 @@ html {
 html.dark {
   background-image: linear-gradient(0deg, hsl(264, 84%, 15%) 0%, #3a0647 70%);
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100%;
+  background-attachment: scroll;
   overflow-x: hidden
 }
