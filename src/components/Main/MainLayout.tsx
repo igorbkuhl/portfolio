@@ -8,7 +8,10 @@ export default function MainLayout() {
   return (
     <div
       className={`
-        lg:rounded-2xl bg-pink-light dark:bg-purple-dark
+        lg:rounded-2xl bg-linear-to-b
+        from-pink-light to-violet-100
+        dark:from-purple-dark dark:to-indigo-950
+        shadow-lg/25 shadow-indigo-300 dark:shadow-rose-950
         w-screen lg:w-280 p-8
       `}
     >

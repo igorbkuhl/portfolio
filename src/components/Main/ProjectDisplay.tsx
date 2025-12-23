@@ -72,7 +72,7 @@ export default function ProjectDisplay() {
           <div
             key={index}
             className={`
-              bg-[#f3d0fb40] dark:bg-[#631d4a40] w-full
+              bg-rose-100/50 dark:bg-slate-950/50 w-full
               rounded-md p-4 mb-4 drop-shadow-lg
             `}
           >
