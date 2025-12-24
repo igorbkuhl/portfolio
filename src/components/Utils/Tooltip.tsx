@@ -20,10 +20,10 @@ export default function Tooltip({ text, children, width }: Props) {
       {visible && (
         <span
           className={`
-            absolute -translate-x-1/2 mt-2 whitespace-normal 
+            absolute -translate-x-1/2 mt-2 
             rounded-lg bg-purple-dark/75 dark:bg-licorice py-1.5 px-3 text-sm 
             text-rose-200 transition-opacity select-none z-10
-            ${width ? ("w-" + width) : "text-nowrap"}
+            ${width ? `w-sm whitespace-normal` : "text-nowrap"}
           `}
         >
           {text}

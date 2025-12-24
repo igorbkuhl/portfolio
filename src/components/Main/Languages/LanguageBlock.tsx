@@ -48,7 +48,7 @@ export default function LanguageBlock() {
 
   const infoTooltip = (content: string) => {
     return (
-      <Tooltip text={content} width={64}>
+      <Tooltip text={content} width={24}>
         <div className="ml-2 scale-75 opacity-75 relative">
           <Info />
         </div>
