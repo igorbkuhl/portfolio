@@ -13,6 +13,8 @@ export const useLanguage = (lang: string, defaultLabel: string = "") => {
             return "C++";
         case "c-sharp":
             return "C#";
+        case "supabase":
+            return "Supabase";
         default:
             return defaultLabel;
     };
