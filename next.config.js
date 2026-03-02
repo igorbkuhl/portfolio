@@ -1,6 +1,9 @@
 const withNextIntl = require("next-intl/plugin")();
 
 module.exports = withNextIntl({
+  turbopack: {
+    root: "."
+  },
   images: {
     remotePatterns: [
       {
