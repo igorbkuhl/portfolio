@@ -19,6 +19,8 @@ interface ItemProps {
 };
 
 export default function ProjectItem({source, project}: ItemProps) {
+  if (!source) return null;
+
   const t = useTranslations("home.main.projects");
   const tAlts = useTranslations("home.main.projects.iconTitles");
 
