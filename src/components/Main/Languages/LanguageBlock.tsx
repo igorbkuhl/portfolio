@@ -71,7 +71,7 @@ export default function LanguageBlock() {
             <div
               key={index}
               className={`
-                flex flex-col flex-wrap lg:justify-evenly m-auto mb-4 w-fit
+                flex flex-col flex-wrap lg:justify-evenly mx-auto mb-4 w-fit
                 justify-center lg:justify-start
               `}
             >
@@ -79,7 +79,7 @@ export default function LanguageBlock() {
                 <h4>{info.label}</h4>
                 {info.description && infoTooltip(info.description)}
               </div>
-              <div className="flex flex-row">
+              <div className="flex flex-row flex-wrap w-xs justify-center">
                 {info.icons.map((icon, iconIndex) => (
                   <div
                     key={iconIndex}
