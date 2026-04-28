@@ -40,7 +40,7 @@ export default function ProjectItem({source, project}: ItemProps) {
         height={300}
         alt={project.title}
         title={project.title}
-        quality={100}
+        quality={75}
         unoptimized
         className={`
           h-full w-full lg:h-[300px] lg:w-[390px]
