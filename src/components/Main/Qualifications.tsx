@@ -23,7 +23,6 @@ export default function Qualifications() {
       date: t(`certificates.${cert}.date`),
       ready: certificatesRaw[cert]?.ready ?? true,
   }));
-  console.log(certificates);
 
   const openModal = (certificate: Certificate) => {
     setCurrentCertificate(certificate);
