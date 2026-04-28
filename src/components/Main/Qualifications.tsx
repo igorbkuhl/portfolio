@@ -8,6 +8,7 @@ interface Certificate {
   name: string;
   path: string;
   date: string;
+  ready: boolean;
 };
 
 export default function Qualifications() {
@@ -15,12 +16,14 @@ export default function Qualifications() {
   const [currentCertificate, setCurrentCertificate] = useState<Certificate | null>(null);
   const t = useTranslations("home.main.qualifications");
 
-  const certificateKeys = Object.keys(t.raw("certificates"));
-  const certificates = certificateKeys.map((cert) => ({
+  const certificatesRaw = t.raw("certificates");
+  const certificates = Object.keys(certificatesRaw).map((cert) => ({
       name: t(`certificates.${cert}.title`),
       path: getImage(`certificates/${cert}.jpg`),
-      date: t(`certificates.${cert}.date`)
+      date: t(`certificates.${cert}.date`),
+      ready: certificatesRaw[cert]?.ready ?? true,
   }));
+  console.log(certificates);
 
   const openModal = (certificate: Certificate) => {
     setCurrentCertificate(certificate);
@@ -51,16 +54,18 @@ export default function Qualifications() {
           </li>
         ))}
       </ul>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        {currentCertificate && (
-          <Image
-            src={currentCertificate.path}
-            alt="Certificate image"
-            height={600}
-            width={850}
-          />
-        )}
-      </Modal>
+      {currentCertificate?.ready && (
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          {currentCertificate && (
+            <Image
+              src={currentCertificate.path}
+              alt="Certificate image"
+              height={600}
+              width={850}
+            />
+          )}
+        </Modal>
+      )}
     </section>
   );
 }
