@@ -7,6 +7,7 @@ import Tooltip from "@src/components/Utils/Tooltip";
 
 interface LanguageTable {
   labels: string[];
+  links: string;
   title: string;
 };
 
@@ -14,6 +15,7 @@ interface LanguageSection {
   label: string;
   description: string;
   titles: string[];
+  links: string[];
   icons: string[];
 };
 
@@ -38,6 +40,7 @@ export default function LanguageBlock() {
           ...(description && { description }),
           label: t(`groups.${lang.title}.title`),
           titles: lang.labels,
+          links: lang.links.split(','),
           icons
         };
       });
@@ -89,7 +92,10 @@ export default function LanguageBlock() {
                     key={iconIndex}
                     className="flex flex-col mx-2 lg:m-2"
                   >
-                    <div className="relative">
+                    <a
+                      href={`${info.links[iconIndex]}`}
+                      target="_blank"
+                    >
                       <Icon
                         src={icon}
                         size={80}
@@ -97,7 +103,7 @@ export default function LanguageBlock() {
                         tooltip={info.titles[iconIndex]}
                         className="hover:scale-110"
                       />
-                    </div>
+                    </a>
                   </div>
                 ))}
               </div>
