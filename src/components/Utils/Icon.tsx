@@ -28,6 +28,7 @@ export default function Icon({
       width={size}
       className={`
         drop-shadow-sm drop-shadow-slate-300 dark:drop-shadow-indigo-600
+        aspect-square max-w-${size} max-h-${size}
         ${className}
       `}
       unoptimized
