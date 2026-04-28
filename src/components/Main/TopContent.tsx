@@ -93,6 +93,7 @@ export default function TopContent() {
             lg:w-full rounded-full drop-shadow-lg
             lg:mx-auto mb-8 lg:m-0
           `}
+          loading="eager"
         />
       </div>
     </section>
